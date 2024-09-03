@@ -10,9 +10,10 @@
 	"license": "MIT",
 	"homepage": "https://github.com/xazhaox/whisper-docs",
   "scripts": {
-    "docs:dev": "vitepress dev docs --host",
+    "docs:dev": "vitepress dev docs --host --port 10837 --open",
 		"docs:build": "vitepress build docs",
-		"docs:preview": "vitepress preview docs"
+		"docs:preview": "vitepress preview docs",
+		"docs:deploy": "sh deploy.sh"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
