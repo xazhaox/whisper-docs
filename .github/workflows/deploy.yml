@@ -23,58 +23,34 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-# 工作流里的任务
 jobs:
-  # 构建
+  # 构建工作
   build:
-    # 指定该任务运行的系统，目前可选的有 ubuntu、windows、和 macOS
     runs-on: ubuntu-latest
-    # 任务里的运行步骤
     steps:
-      # 代码检出
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      # 安装 Node.js
-      - name: Install Node.js
+          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      # 配置 github pages
+          node-version: 20
+          cache: pnpm # 或 pnpm / yarn
       - name: Setup Pages
-        uses: actions/configure-pages@v3
-      # 安装 pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9
-          run_install: false
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-      # 安装依赖
+        uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: pnpm install
-      # 打包
+        run: pnpm install # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
-        run: |
-          pnpm run docs:build
-          touch docs/.vitepress/dist/.nojekyll
-      # 上传到 Github Pages 部署环境
+        run: pnpm run docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
-  # 部署到GitHubPages
+
+  # 部署工作
   deploy:
     environment:
       name: github-pages
@@ -83,7 +59,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      # 部署 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
