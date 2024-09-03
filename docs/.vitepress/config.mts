@@ -14,7 +14,7 @@ export default defineConfig({
 	},
 	title: "Whisper",
 	lang: "zh-CN",
-	description: "Geeker Admin 中文文档",
+	description: "Whisper 中文文档",
 	head: [
 		["meta", { name: "author", content: "HalseySpicy" }],
 		["meta", { name: "keywords", content: "whisper, whisper-vue, whisper-docs, Vite, Vue, Vue3, Admin" }],

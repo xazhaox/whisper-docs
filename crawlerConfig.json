@@ -1,6 +1,6 @@
 {
-	"index_name": "Geeker-Admin",
-	"start_urls": ["https://docs.spicyboy.cn/"],
+	"index_name": "Whisper",
+	"start_urls": ["https://github.com/xazhaox/whisper-docs"],
 	"rateLimit": 8,
 	"maxDepth": 10,
 	"selectors": {
