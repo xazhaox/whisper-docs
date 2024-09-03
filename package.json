@@ -12,7 +12,7 @@
   "scripts": {
     "docs:dev": "vitepress dev docs --host --port 10837 --open",
 		"docs:build": "vitepress build docs",
-		"docs:preview": "vitepress preview docs",
+		"docs:preview": "vitepress preview docs --port 10837",
 		"docs:deploy": "sh deploy.sh"
   },
   "devDependencies": {
