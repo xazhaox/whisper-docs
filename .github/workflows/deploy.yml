@@ -2,8 +2,8 @@
 name: Deploy whisper site to Pages
 
 on:
-  # 在针对 `main` 分支的推送上运行
-  # 如果是使用 `main` 分支作为默认分支，请将其更改为 `main`
+  # 在针对 `main` 分支的推送上运行。如果你
+  # 使用 `main` 分支作为默认分支，请将其更改为 `main`
   push:
     branches: [main]
 
@@ -31,18 +31,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
-      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+      # - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm # 或 npm / yarn
+          cache: npm # 或 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: pnpm install # 或 npm ci / yarn install / bun install
+        run: npm ci # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
-        run: pnpm run docs:build # 或 npm docs:build / yarn docs:build / bun run docs:build
+        run: npm run docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
