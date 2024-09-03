@@ -67,7 +67,7 @@ jobs:
       # 打包
       - name: Build with VitePress
         run: |
-          pnpm build
+          pnpm run docs:build
           touch docs/.vitepress/dist/.nojekyll
       # 上传到 Github Pages 部署环境
       - name: Upload artifact
