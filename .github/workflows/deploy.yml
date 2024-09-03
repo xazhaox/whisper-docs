@@ -1,6 +1,7 @@
 # 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
 name: Deploy whisper site to Pages
 
+# 用于描述工作流的何时触发
 on:
   # 在针对 `main` 分支的推送上运行。如果你
   # 使用 `master` 分支作为默认分支，请将其更改为 `master`
@@ -12,7 +13,7 @@ on:
 
 # 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -22,34 +23,58 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# 工作流里的任务
 jobs:
-  # 构建工作
+  # 构建
   build:
+    # 指定该任务运行的系统，目前可选的有 ubuntu、windows、和 macOS
     runs-on: ubuntu-latest
+    # 任务里的运行步骤
     steps:
+      # 代码检出
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
-      # - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
-      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
-      - name: Setup Node
+          fetch-depth: 0
+      # 安装 Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm # 或 pnpm / yarn
+          node-version: 18
+      # 配置 github pages
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v3
+      # 安装 pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+          run_install: false
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      # 安装依赖
       - name: Install dependencies
-        run: npm ci # 或 pnpm install / yarn install / bun install
+        run: pnpm install
+      # 打包
       - name: Build with VitePress
-        run: npm run docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
+        run: |
+          pnpm build
+          touch docs/.vitepress/dist/.nojekyll
+      # 上传到 Github Pages 部署环境
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: docs/.vitepress/dist
-
-  # 部署工作
+  # 部署到GitHubPages
   deploy:
     environment:
       name: github-pages
@@ -58,6 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      # 部署 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2

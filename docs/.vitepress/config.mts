@@ -2,6 +2,7 @@ import mdItCustomAttrs from "markdown-it-custom-attrs";
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
+	base: "/whisper-docs/",
 	locales: {
 		root: {
 			label: "简体中文",
