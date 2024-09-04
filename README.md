@@ -1,2 +1,2 @@
 # 🎉🎉🎉whisper 文档
-- Link：https://github.com/xazhaox/whisper-docs
+- Link：https://xazhaox.github.io/whisper-docs/
