@@ -2,7 +2,6 @@ import mdItCustomAttrs from "markdown-it-custom-attrs";
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-	base: "/whisper-docs/",
 	locales: {
 		root: {
 			label: "简体中文",
@@ -16,9 +15,11 @@ export default defineConfig({
 	title: "Whisper",
 	lang: "zh-CN",
 	description: "Whisper 中文文档",
+	cleanUrls: true,
 	head: [
 		["meta", { name: "author", content: "Zhao.An" }],
 		["meta", { name: "keywords", content: "whisper, whisper-vue, whisper-docs, Vite, Vue, Vue3, Admin" }],
+		// 将 logo.svg 放在公共目录中，如果设置了 base，则使用 /base/logo.svg
 		["link", { rel: "icon", href: "/logo.svg" }],
 		["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" }],
 		["script", { src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" }],
@@ -147,7 +148,7 @@ export default defineConfig({
 							{ text: "Gitee", link: "https://gitee.com/xaJa/whisper" },
 						],
 					},
-          {
+					{
 						text: "Spring Boot 版本",
 						items: [
 							{ text: "GitHub", link: "https://github.com/xazhaox/whisper" },

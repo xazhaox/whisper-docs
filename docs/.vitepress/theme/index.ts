@@ -3,6 +3,7 @@ import DefaultTheme from "vitepress/theme";
 import Avatar from "../components/Avatar.vue";
 import Layout from './Layout.vue'
 import "./styles/index.scss";
+import "./styles/var.css";
 
 export default {
 	...DefaultTheme,
@@ -10,5 +11,5 @@ export default {
 		DefaultTheme.enhanceApp(ctx);
 		ctx.app.component("Avatar", Avatar);
 	},
-	Layout
+	Layout: Layout
 };

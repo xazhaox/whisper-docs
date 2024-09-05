@@ -1,13 +1,13 @@
 ---
 layout: home
 
-title: Whisper
-titleTemplate: 一款简单易用的中后台模版
+title: whisper
+titleTemplate: 企业级管理系统框架模板
 
 hero:
-  name: Whisper
-  text: 简单清新的中后台模版
-  tagline: 基于 SpringCloud Redis Vue3 TS Ant-Design-Vue
+  name: Whisper Admin
+  text: 企业级管理系统框架模板
+  tagline: 基于 SpringCloud SpringBoot Vue3 TS Ant-Design-Vue 等主流框架
   actions:
     - theme: brand
       text: 快速开始

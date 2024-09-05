@@ -1,0 +1,15 @@
+:root {
+	--c-brand: #ff4d4f;
+
+	--v-home-hero-name-background: #f6abac;
+	--v-home-hero-image-background: #d0e1ff;
+	--v-home-hero-image-background-gradient: #fdd7e9;
+
+	--v-button-brand-text: #ffffff;
+	--v-button-brand-bg: #ff7a45;
+	--v-button-brand-hover-border: #ff9c6e;
+	--v-button-brand-hover-bg: #ff9c6e;
+
+	--s-scrollbar-thumb: #d1d1d1;
+	--s-scrollbar-thumb-dark: #4d4c4c;
+}
