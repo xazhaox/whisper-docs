@@ -2,8 +2,6 @@
 
 - Link：https://xazhaox.github.io/whisper-docs/
 
-
-
 # 🏵️ 本地开发
 
 ```shell
