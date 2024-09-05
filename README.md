@@ -2,7 +2,7 @@
 
 - Link：https://xazhaox.github.io/whisper-docs/
 
-# 🏵️ 本地开发
+### 🏵️ 本地开发
 
 ```shell
 # 从github拉取代码
@@ -12,7 +12,7 @@ https://github.com/xazhaox/whisper-docs.git
 pnpm run docs:dev
 ```
 
-# 🎯 Nginx 发布
+### 🎯 Nginx 发布
 
 ```shell
 # 打包
