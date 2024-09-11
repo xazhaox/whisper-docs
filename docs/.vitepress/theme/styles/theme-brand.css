@@ -1,0 +1,28 @@
+:root {
+	/* theme color */
+	--vp-c-brand-1: var(--c-brand);
+	--vp-c-brand-light: var(--c-brand);
+	--vp-c-brand-dark: var(--c-brand);
+
+	--vp-home-hero-name-color: transparent;
+	/* title text  */
+	--vp-home-hero-name-background: -webkit-linear-gradient(60deg, var(--c-brand), var(--v-home-hero-name-background));
+
+	/* home image background*/
+	--vp-home-hero-image-background-image: linear-gradient(
+		-45deg,
+		var(--v-home-hero-image-background) 50%,
+		var(--v-home-hero-image-background-gradient) 50%
+	);
+	--vp-home-hero-image-filter: blur(80px);
+
+	/* botton text */
+	--vp-button-brand-text: var(--v-button-brand-text);
+	/* button bg */
+	--vp-button-brand-bg: var(--v-button-brand-bg);
+
+	/* button hover */
+	--vp-button-brand-hover-border: var(--v-button-brand-hover-border);
+	--vp-button-brand-hover-text: var(--v-button-brand-text);
+	--vp-button-brand-hover-bg: var(--v-button-brand-hover-bg);
+}

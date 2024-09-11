@@ -2,8 +2,7 @@
 import DefaultTheme from "vitepress/theme";
 import Avatar from "../components/Avatar.vue";
 import Layout from './Layout.vue'
-import "./styles/index.scss";
-import "./styles/var.css";
+import "./styles/index.css";
 
 export default {
 	...DefaultTheme,

@@ -1,0 +1,24 @@
+:root {
+	/* info */
+	--vp-custom-block-info-bg: var(--g-info-bg);
+	--vp-custom-block-info-border: var(--g-block-info-border);
+	--vp-custom-block-info-text: var(--g-block-info-text);
+
+	/* warning */
+	--vp-custom-warning-info-bg: var(--g-warning-bg);
+	--vp-custom-block-warning-border: var(--g-block-warning-border);
+	--vp-custom-block-warning-text: var(--g-block-warning-text);
+
+	/* tip */
+	--vp-custom-tip-info-bg: var(--g-tip-bg);
+	--vp-custom-block-tip-border: var(--g-block-tip-border);
+	--vp-custom-block-tip-text: var(--g-block-tip-text);
+
+	/* danger */
+	--vp-custom-block-danger-border: var(--g-block-danger-border);
+	--vp-custom-block-danger-text: var(--g-block-danger-text);
+	--vp-custom-block-danger-bg: var(--g-danger-bg);
+
+	/* details */
+	--vp-custom-block-details-border: transparent;
+}

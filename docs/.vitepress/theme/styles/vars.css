@@ -1,0 +1,31 @@
+:root {
+	--c-brand: #ff4d4f;
+
+	--v-home-hero-name-background: #f6abac;
+	--v-home-hero-image-background: #d0e1ff;
+	--v-home-hero-image-background-gradient: #fdd7e9;
+
+	--v-button-brand-text: #ffffff;
+	--v-button-brand-bg: #ff7a45;
+	--v-button-brand-hover-border: #ff9c6e;
+	--v-button-brand-hover-bg: #ff9c6e;
+
+	--s-scrollbar-thumb: #d1d1d1;
+	--s-scrollbar-thumb-dark: #4d4c4c;
+
+	--g-info-bg: rgba(0, 0, 0, 0.04);
+	--g-block-info-border: #d9d9d9;
+	--g-block-info-text: rgba(0, 0, 0, 0.65);
+
+	--g-warning-bg: #fffbe6;
+	--g-block-warning-border: #faad14;
+	--g-block-warning-text: #d48806;
+
+	--g-tip-bg: #f9f0ff;
+	--g-block-tip-border: #b37feb;
+	--g-block-tip-text: #722ed1;
+
+	--g-danger-bg: #fff2f0;
+	--g-block-danger-border: #ff4d4f;
+	--g-block-danger-text: #ff4d4f;
+}

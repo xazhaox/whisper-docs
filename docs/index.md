@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/index
+      link: /application/index
     - theme: alt
       text: 在线预览
       link: https://github.com/xazhaox/whisper-vue

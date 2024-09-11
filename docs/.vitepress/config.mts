@@ -9,7 +9,7 @@ export default defineConfig({
 		},
 		en: {
 			label: "English",
-			lang: "en",
+			lang: "en-US",
 		},
 	},
 	title: "Whisper",
@@ -67,26 +67,26 @@ export default defineConfig({
 					{
 						text: "Spring Cloud 文档",
 						items: [
-							{ text: "指南", link: "/spring/guide/", activeMatch: "/guide" },
-							{ text: "中间件", link: "/spring/components/", activeMatch: "/components" },
-							{ text: "第三方工具", link: "/spring/tools/", activeMatch: "/tools" },
-							{ text: "架构图", link: "spring/architecture/", activeMatch: "/architecture" },
-							{ text: "技术线路", link: "spring/route/", activeMatch: "/route" },
+							{ text: "指南", link: "/spring/cloud/guide/" },
+							{ text: "中间件", link: "/spring/cloud/components/" },
+							{ text: "第三方工具", link: "/spring/cloud/tools/" },
+							{ text: "架构图", link: "/spring/cloud/architecture/" },
+							{ text: "技术线路", link: "/spring/cloud/route/" },
 						],
 					},
 					{
 						text: "Spring Boot 文档",
 						items: [
-							{ text: "指南", link: "/spring/guide/", activeMatch: "/guide" },
-							{ text: "中间件", link: "/spring/components/", activeMatch: "/components" },
-							{ text: "技术线路", link: "spring/route/", activeMatch: "/route" },
+							{ text: "指南", link: "/spring/boot/guide/" },
+							{ text: "中间件", link: "/spring/boot/components/" },
+							{ text: "技术线路", link: "/spring/boot/route/" },
 						],
 					},
 					{
 						text: "Vue 文档",
 						items: [
-							{ text: "指南", link: "/vue/guide/", activeMatch: "/guide" },
-							{ text: "组件", link: "/vue/components/", activeMatch: "/components" },
+							{ text: "指南", link: "/vue/guide/" },
+							{ text: "组件", link: "/vue/components/" },
 						],
 					},
 				],
@@ -135,9 +135,9 @@ export default defineConfig({
 					},
 				],
 			},
-			{ text: "🥰 技术支持", link: "/support/index" },
-			{ text: "🧁 赞助", link: "/sponsor/index" },
-			{ text: "🏡 社区", link: "/community/index" },
+			{ text: "🥰 技术支持", link: "/support/", activeMatch: "/support" },
+			{ text: "🧁 赞助", link: "/sponsor/", activeMatch: "/sponsor" },
+			{ text: "🏡 社区", link: "/community/", activeMatch: "/community" },
 			{
 				text: "🌈 友情连接",
 				items: [
@@ -171,48 +171,72 @@ export default defineConfig({
 		],
 
 		sidebar: {
-			"spring/guide/": [
+			"/spring/cloud/guide/": [
 				{
 					text: "指南",
-					items: [{ text: "介绍", link: "/guide/introduce" }],
+					items: [
+						{ text: "介绍", link: "/spring/cloud/guide" },
+						{ text: "快速开始", link: "/spring/cloud/guide" },
+					],
 				},
 				{
 					text: "进阶",
-					items: [{ text: "部署Java", link: "/guide/standard" }],
+					items: [{ text: "部署Java", link: "/spring/cloud/guide" }],
 				},
 				{
 					text: "其他",
-					items: [{ text: "常见问题", link: "/guide/question" }],
+					items: [{ text: "常见问题", link: "/spring/cloud/guide" }],
 				},
 			],
 
-			"vue/guide/": [
+			"/spring/boot/guide/": [
 				{
 					text: "指南",
-					items: [{ text: "介绍", link: "/guide/introduce" }],
+					items: [
+						{ text: "介绍", link: "/spring/boot/guide" },
+						{ text: "快速开始", link: "/spring/boot/guide" },
+					],
 				},
 				{
 					text: "进阶",
-					items: [{ text: "部署vue", link: "/guide/standard" }],
+					items: [{ text: "部署Java", link: "/spring/boot/guide" }],
 				},
 				{
 					text: "其他",
-					items: [{ text: "常见问题", link: "/guide/question" }],
+					items: [{ text: "常见问题", link: "/spring/boot/guide" }],
+				},
+			],
+
+			"/vue/guide/": [
+				{
+					text: "指南",
+					items: [
+						{ text: "介绍", link: "/vue/guide/introduce" },
+						{ text: "快速上手", link: "/vue/guide/" },
+						{ text: "目录结构", link: "/vue/guide/catalogue" },
+						{ text: "路由、菜单", link: "/vue/guide/router" },
+						{ text: "权限管理", link: "/vue/guide/auth" },
+						{ text: "网络请求", link: "/vue/guide/request" },
+						{ text: "构建、部署", link: "/vue/guide/build" },
+					],
+				},
+				{
+					text: "进阶",
+					items: [
+						{ text: "项目规范", link: "/vue/guide/standard" },
+						{ text: "主题配置", link: "/vue/guide/theme" },
+						{ text: "布局模式", link: "/vue/guide/layout" },
+					],
+				},
+				{
+					text: "其他",
+					items: [{ text: "常见问题", link: "/vue/guide/question" }],
 				},
 			],
 			"/vue/components/": [
 				{
 					text: "组件",
-					items: [
-						{ text: "ProTable", link: "/components/proTable" },
-						{ text: "SelectIcon", link: "/components/selectIcon" },
-						{ text: "SelectFilter", link: "/components/selectFilter" },
-						{ text: "TreeFilter", link: "/components/treeFilter" },
-						{ text: "Upload", link: "/components/upload" },
-						{ text: "ImportExcel", link: "/components/importExcel" },
-						{ text: "SvgIcon", link: "/components/svgIcon" },
-						{ text: "WangEditor", link: "/components/wangEditor" },
-					],
+					items: [{ text: "SvgIcon", link: "/vue/guide" }],
 				},
 			],
 		},

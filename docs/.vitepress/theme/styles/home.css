@@ -1,0 +1,35 @@
+.VPHome {
+	padding-bottom: 80px !important;
+}
+
+.VPHome .image-src {
+	width: 256px;
+	height: 256px;
+}
+.VPHome .text {
+	font-size: 52px;
+}
+.VPHome .tagline {
+	font-size: 22px;
+	max-width: 698px;
+	width: 698px;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--s-scrollbar-thumb);
+	border-radius: 20px;
+	box-shadow: inset 0 0 0 white;
+}
+
+/* dark */
+.dark ::-webkit-scrollbar-thumb {
+	background-color: var(--s-scrollbar-thumb-dark);
+}
+
+.VPSwitch {
+	transition: border-color 25s !important;
+}

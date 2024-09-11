@@ -32,7 +32,18 @@ Node.js 版本推荐安装 **16+** 以上，版本过低依赖包可能安装失
 
 ```json
 {
-	"recommendations": ["vue.volar", "vue.vscode-typescript-vue-plugin", "hollowtree.vue-snippets", "dbaeumer.vscode-eslint", "stylelint.vscode-stylelint", "esbenp.prettier-vscode", "editorconfig.editorconfig", "streetsidesoftware.code-spell-checker", "syler.sass-indented", "mikestead.dotenv"]
+  "recommendations": [
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "hollowtree.vue-snippets",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "syler.sass-indented",
+    "mikestead.dotenv"
+  ]
 }
 ```
 
@@ -45,18 +56,18 @@ Node.js 版本推荐安装 **16+** 以上，版本过低依赖包可能安装失
 
 ## 代码拉取
 
-### 从 Gitee 拉取代码：
-
-```bash
-# 克隆代码
-git clone https://gitee.com/HalseySpicy/Geeker-Admin.git
-```
-
 ### 从 GitHub 拉取代码：
 
 ```bash
 # 克隆代码
-git clone https://github.com/HalseySpicy/Geeker-Admin.git
+git clone https://github.com/xazhaox/whisper-vue.git
+```
+
+### 从 Gitee 拉取代码：
+
+```bash
+# 克隆代码
+git clone https://gitee.com/xaJa/whisper-vue.git
 ```
 
 ## 安装使用步骤
@@ -83,10 +94,10 @@ pnpm serve
 pnpm build:dev
 
 # 测试环境
-pnpm build:test
+pnpm build:uat
 
 # 生产环境
-pnpm build:pro
+pnpm build:prod
 ```
 
 ### 校验、格式化代码：
@@ -113,35 +124,35 @@ pnpm commit
 
 ```json
 {
-	"scripts": {
-		// 本地运行(dev环境)
-		"dev": "vite",
-		// 本地运行(dev环境)
-		"serve": "vite",
-		// 构建打包(dev环境)
-		"build:dev": "vue-tsc && vite build --mode development",
-		// 构建打包(test环境)
-		"build:test": "vue-tsc && vite build --mode test",
-		// 构建打包(pro环境)
-		"build:pro": "vue-tsc && vite build --mode production",
-		// 检查项目 ts 类型
-		"type:check": "vue-tsc --noEmit --skipLibCheck",
-		// 本地环境预览构建后的 dist
-		"preview": "npm run build:dev && vite preview",
-		// 执行 eslint 校验
-		"lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
-		// 执行 prettier 格式化
-		"lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
-		// 执行 stylelint 格式化
-		"lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-		// 执行 lint-staged.config.js 文件下的命令
-		"lint:lint-staged": "lint-staged",
-		// 初始化 husky 配置
-		"prepare": "husky install",
-		// 自动更新版本
-		"release": "standard-version",
-		// 提交代码(可自定义配置执行命令)
-		"commit": "git add -A && czg && git push"
-	}
+  "scripts": {
+    // 本地运行(dev环境)
+    "dev": "vite --mode dev",
+    // 本地运行(dev环境)
+    "serve": "vite --mode dev",
+    // 构建打包(dev环境)
+    "build:dev": "vue-tsc && vite build --mode dev",
+    // 构建打包(test环境)
+    "build:uat": "vue-tsc && vite build --mode uat",
+    // 构建打包(pro环境)
+    "build:prod": "vue-tsc && vite build --mode prod",
+    // 检查项目 ts 类型
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    // 本地环境预览构建后的 dist
+    "preview": "npm run build:dev && vite preview",
+    // 执行 eslint 校验
+    "lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
+    // 执行 prettier 格式化
+    "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\" \"*.ts\"",
+    // 执行 stylelint 格式化
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    // 执行 lint-staged.config.js 文件下的命令
+    "lint:lint-staged": "lint-staged",
+    // 初始化 husky 配置
+    "prepare": "husky install",
+    // 自动更新版本
+    "release": "standard-version",
+    // 提交代码(可自定义配置执行命令)
+    "commit": "git add -A && czg && git push"
+  }
 }
 ```
